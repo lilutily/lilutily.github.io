@@ -1,16 +1,7 @@
-// SmoothScroll for websites v1.2.1
-// Source (current script): https://gist.github.com/theroyalstudent/4e6ec834be19bf077298
-// Original: https://gist.github.com/galambalazs/6477177/
-// Licensed under the terms of the MIT license.
- 
-// People involved
-//  - Balazs Galambosi (maintainer)  
-//  - Michael Herf     (Pulse Algorithm)
-//  - Edwin Ang (optimzation and added support)
- 
+
 (function(){
   
-// Scroll Variables (tweakable)
+
 var defaultOptions = {
  
     // Scrolling Core
@@ -54,21 +45,10 @@ var deltaBuffer = [ 120, 120, 120 ];
 var key = { left: 37, up: 38, right: 39, down: 40, spacebar: 32, 
             pageup: 33, pagedown: 34, end: 35, home: 36 };
  
- 
-/***********************************************
- * SETTINGS
- ***********************************************/
+
  
 var options = defaultOptions;
  
- 
-/***********************************************
- * INITIALIZE
- ***********************************************/
- 
-/**
- * Tests if smooth scrolling is allowed. Shuts down everything if not.
- */
 function initTest() {
  
     var disableKeyboard = false; 
@@ -83,9 +63,6 @@ function initTest() {
     }
 }
  
-/**
- * Sets up scrolls array, determines if frames are involved.
- */
 function init() {
   
     if (!document.body) return;
@@ -261,10 +238,6 @@ function scrollArray(elem, left, top, delay) {
  * EVENTS
  ***********************************************/
  
-/**
- * Mouse wheel handler.
- * @param {Object} event
- */
 function wheel(event) {
  
     if (!initDone) {
@@ -489,12 +462,6 @@ var requestFrame = (function () {
  * PULSE
  ***********************************************/
  
-/**
- * Viscous fluid with a pulse for part and decay for the rest.
- * - Applies a fixed force over an interval (a damped acceleration), and
- * - Lets the exponential bleed away the velocity over a longer interval
- * - Michael Herf, http://stereopsis.com/stopping/
- */
 function pulse_(x) {
     var val, start, expx;
     // test
