@@ -12,9 +12,6 @@ $('.page-scroll').bind('click', function(event) {
 
 
 
-////////////////////////////////////////////////////////////////////////
-// On-Scroll Animated Header: https://github.com/codrops/AnimatedHeader
-////////////////////////////////////////////////////////////////////////
 
 var cbpAnimatedHeader = (function() {
 
@@ -52,10 +49,6 @@ var cbpAnimatedHeader = (function() {
 })();
 
 
-
-//////////////////////////////////////////////
-// Highlight the top nav as scrolling occurs
-//////////////////////////////////////////////
 
 $('body').scrollspy({
     target: '.navbar',
@@ -140,10 +133,6 @@ $('.counter').counterUp({
 });
 
 
-
-////////////////////////////////////////////////////////////////////////////////////////////
-// Isotop Package
-////////////////////////////////////////////////////////////////////////////////////////////
 $(window).load(function() {
 $('.portfolio_menu ul li').click(function(){
 	$('.portfolio_menu ul li').removeClass('active_prot_menu');
@@ -183,11 +172,6 @@ $('.scrolltotop').click(function(){
     return false;
 });
 
-
-
-////////////////////////////////////////////////////////////////////
-// Close mobile menu when click menu link (Bootstrap default menu)
-////////////////////////////////////////////////////////////////////
 
 $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
