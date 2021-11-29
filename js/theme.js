@@ -1,7 +1,3 @@
-/////////////////////////////////////////////////////////////////////
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-/////////////////////////////////////////////////////////////////////
-
 $('.page-scroll').bind('click', function(event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
@@ -9,6 +5,7 @@ $('.page-scroll').bind('click', function(event) {
     }, 1500, 'easeInOutExpo');
     event.preventDefault();
 });
+// 바인드 스크롤 이벤트 애니메이션 주면서 이동
 
 
 
@@ -46,14 +43,14 @@ var cbpAnimatedHeader = (function() {
 
     init();
 
-})();
+})(); //https://gist.github.com/josh-jacobsen/a1bb0594e6c79f86e962ea94a03d1825 참고함
 
 
 
 $('body').scrollspy({
     target: '.navbar',
     offset: 65
-})
+}) // 스크롤파이 = 스크롤이 긴 페이지에서 무엇을 보는지 알게해줌 ->네비게이션 기능
 
 
 
@@ -64,7 +61,7 @@ $('body').scrollspy({
 // Wait for window load
 $(window).load(function() {
     // Animate loader off screen
-    $(".page-loader").fadeOut("slow");
+    $(".page-loader").fadeOut("slow"); // 이미지 로딩 느리게
 });
 
 
@@ -73,10 +70,10 @@ $(window).load(function() {
 // OWL Carousel: http://owlgraphic.com/owlcarousel
 ////////////////////////////////////////////////////
 
-// Intro text carousel
-$("#owl-intro-text").owlCarousel({
-    singleItem : true,
-    autoPlay : 6000,
+// Intro carousel
+$("#owl-intro-text").owlCarousel({ // 슬라이더, 갤러리 이미지 원하는 위치로
+    singleItem : true, // 하나씩 보여줌
+    autoPlay : 6000, 
     stopOnHover : true,
     navigation : false,
     navigationText : false,
@@ -101,39 +98,28 @@ $("#owl-testimonial").owlCarousel({
     pagination : true,
     autoHeight : true
 })
+//http://owlgraphic.com/owlcarousel/#how-to 참고
 
-
-////////////////////////////////////////////////////////////////////
-// Stellar (parallax): https://github.com/markdalgleish/stellar.js
-////////////////////////////////////////////////////////////////////
 
 $.stellar({
-    // Set scrolling to be in either one or both directions
+    // 스크롤을 한 방향 또는 양 방향으로 설정
     horizontalScrolling: false,
     verticalScrolling: true,
 });
+//https://github.com/markdalgleish/stellar.js
 
 
 
-///////////////////////////////////////////////////////////
-// WOW animation scroll: https://github.com/matthieua/WOW
-///////////////////////////////////////////////////////////
-
-new WOW().init();
+new WOW().init();  // wow.js 스크롤 
 
 
-
-////////////////////////////////////////////////////////////////////////////////////////////
-// Counter-Up (requires jQuery waypoints.js plugin): https://github.com/bfintal/Counter-Up
-////////////////////////////////////////////////////////////////////////////////////////////
-
-$('.counter').counterUp({
+$('.counter').counterUp({ // 지정된 숫자까지 숫자 증가
     delay: 10,
     time: 2000
-});
+}); // https://moon1z10.github.io/development/javascript-Counter-Up/ 참고
 
 
-$(window).load(function() {
+$(window).load(function() { // 이미지 로드 포트폴리오 text
 $('.portfolio_menu ul li').click(function(){
 	$('.portfolio_menu ul li').removeClass('active_prot_menu');
 	$(this).addClass('active_prot_menu');
@@ -153,11 +139,8 @@ $('#filters').on( 'click', 'a', function() {
 
 
 
-/////////////////////////
-// Scroll to top button
-/////////////////////////
 
-// Check to see if the window is top if not then display button
+// 창이 상단에 있는지 확인하고 아닐경우 버튼을 표시
 $(window).scroll(function(){
     if ($(this).scrollTop() > 100) {
         $('.scrolltotop').fadeIn();
@@ -166,13 +149,13 @@ $(window).scroll(function(){
     }
 });
 
-// Click event to scroll to top
+// 이벤트를 클릭하여 맨 위로 스크롤
 $('.scrolltotop').click(function(){
     $('html, body').animate({scrollTop : 0}, 1500, 'easeInOutExpo');
     return false;
 });
 
-
+// 메뉴바 클릭시 숨기기
 $(document).on('click','.navbar-collapse.in',function(e) {
     if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
         $(this).collapse('hide');
