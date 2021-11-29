@@ -13,12 +13,12 @@ $('.page-scroll').bind('click', function(event) {
 var cbpAnimatedHeader = (function() {
 
     var docElem = document.documentElement,
-        header = document.querySelector( '.navbar-fixed-top' ),
+        header = document.querySelector( '.navbar-fixed-top' ), // 메뉴바 상단 고정
         didScroll = false,
         changeHeaderOn = 10;
 
     function init() {
-        window.addEventListener( 'scroll', function( event ) {
+        window.addEventListener( 'scroll', function( event ) { // 이벤트 등록 . 스크롤 이벤트 대상에 복수의 동일 이벤트 타입 리스너를 등록
             if( !didScroll ) {
                 didScroll = true;
                 setTimeout( scrollPage, 250 );
@@ -26,7 +26,7 @@ var cbpAnimatedHeader = (function() {
         }, false );
     }
 
-    function scrollPage() {
+    function scrollPage() { // 스크롤 페이지
         var sy = scrollY();
         if ( sy >= changeHeaderOn ) {
             classie.add( header, 'navbar-shrink' );
