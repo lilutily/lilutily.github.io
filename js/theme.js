@@ -54,21 +54,15 @@ $('body').scrollspy({
 
 
 
-///////////////////////////////////////////
-// Display loading image while page loads
-///////////////////////////////////////////
-
-// Wait for window load
+//페이지가 로딩되는 동안 이미지 표시
+// 윈도우 로드를 기다림
 $(window).load(function() {
-    // Animate loader off screen
-    $(".page-loader").fadeOut("slow"); // 이미지 로딩 느리게
+    // 화면에 애니메이션 로드
+    $(".page-loader").fadeOut("slow");
 });
 
 
 
-////////////////////////////////////////////////////
-// OWL Carousel: http://owlgraphic.com/owlcarousel
-////////////////////////////////////////////////////
 
 // Intro carousel
 $("#owl-intro-text").owlCarousel({ // 슬라이더, 갤러리 이미지 원하는 위치로
